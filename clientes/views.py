@@ -78,4 +78,4 @@ class ConversorCNAB(APIView):
             Serializer.is_valid(raise_exception=True)
             Serializer.save()
 
-        return Response({"mensagen": "sucesso dados foram colocados no banco"})
+        return Response({"msg": "dados inseridos com sucesso"})
