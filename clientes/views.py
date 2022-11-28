@@ -1,5 +1,4 @@
-from ipdb import set_trace
-from rest_framework.views import APIView, Response
+from rest_framework.views import APIView, Response, status
 
 from .models import Clientes
 from .serializers import CNABSerializer
@@ -78,4 +77,4 @@ class ConversorCNAB(APIView):
             Serializer.is_valid(raise_exception=True)
             Serializer.save()
 
-        return Response({"msg": "dados inseridos com sucesso"})
+        return Response({"msg": "dados inseridos com sucesso"}, status.HTTP_201_CREATED)
